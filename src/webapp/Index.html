@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Progress Bar Assignment</title>    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="styles/styles.css" rel="stylesheet"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/calcService.js"></script>
+</head>
+    <body ng-app="app">		
+	<div class="container" ng-controller="BarController">
+        <div class="row">		
+             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			 <h2>Progress Bars Assignment</h2>			  
+			  <div class="progress">
+				<div class="progress-bar {{barClass.bar1}}" role="progressbar" aria-valuenow={{barValue.bar1}} aria-valuemin="0" aria-valuemax="100" style="width:{{barValue.bar1}}%;">
+				  {{barValue.bar1}}% Complete
+				</div>
+			  </div>
+			  <div class="progress">
+				<div class="progress-bar {{barClass.bar2}}" role="progressbar" aria-valuenow={{barValue.bar2}} aria-valuemin="0" aria-valuemax="100" style="width:{{barValue.bar2}}%">
+				  {{barValue.bar2}}% Complete
+				</div>
+			  </div>
+			  <div class="progress">
+				<div class="progress-bar {{barClass.bar3}}" role="progressbar" aria-valuenow={{barValue.bar3}} aria-valuemin="0" aria-valuemax="100" style="width:{{barValue.bar3}}%">
+				  {{barValue.bar3}}% Complete
+				</div>
+			  </div>
+			</div>	
+		</div>
+			<div class="row">
+			  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<select ng-model="selectedBar" ng-options="x for x in bars" data-style="btn-primary">
+						<option value="">---Select Bar---</option>
+					</select>
+			  </div>			  
+			  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<button ng-click="calculate(-25)" type="button" class="btn btn-primary btn-md pull-right">-25</button>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<button ng-click="calculate(-10)" type="button" class="btn btn-primary btn-md pull-right">-10</button>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<button ng-click="calculate(+10)" type="button" class="btn btn-primary btn-md pull-right">+10</button>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<button ng-click="calculate(+25)" type="button" class="btn btn-primary btn-md pull-right">+25</button>
+			  </div>			  
+			</div>			 
+		  </div>
+        </div>
+    </div>
+	
+</body>
+</html>
+
